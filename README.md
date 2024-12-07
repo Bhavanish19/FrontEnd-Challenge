@@ -60,4 +60,4 @@ The EV Dashboard is a modern, scalable, and customizable web application built f
 
 ![Screenshot 2024-12-07 at 10 27 51 AM](https://github.com/user-attachments/assets/b7d70958-d57c-4adc-8684-e157f6bbca8c)
 
-
+Time Spent : 3 Hours 
