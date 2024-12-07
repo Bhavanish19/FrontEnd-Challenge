@@ -1,68 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color-scheme: dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  max-width: 100dvw;
+  max-height: 100dvh;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Core background and foreground colors */
+    --background: 240 14% 7%; /* #0D0D0D */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+
+    /* Card colors */
+    --card: 240 13% 11%; /* #1A1A1A */
+    --card-foreground: 0 0% 100%; /* #FFFFFF */
+
+    /* Popover colors */
+    --popover: 240 13% 11%; /* #1A1A1A */
+    --popover-foreground: 0 0% 100%; /* #FFFFFF */
+
+    /* Primary colors - using the neon accent */
+    --primary: 72 100% 50%; /* #00FF00 */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    /* Secondary colors - for UI elements */
+    --secondary: 240 8% 18%; /* #2E2E2E */
+    --secondary-foreground: 240 5% 67%; /* #A6A6A6 */
+
+    /* Muted colors - for less prominent elements */
+    --muted: 240 8% 18%; /* #2E2E2E */
+    --muted-foreground: 240 5% 67%; /* #A6A6A6 */
+
+    /* Accent colors */
+    --accent: 72 100% 50%; /* #00FF00 */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+
+    /* Destructive colors */
+    --destructive: 0 84% 60%; /* #FF3333 */
+    --destructive-foreground: 0 0% 98%; /* #FAFAFA */
+
+    /* Border and input colors */
+    --border: 240 8% 18%; /* #2E2E2E */
+    --input: 240 8% 18%; /* #2E2E2E */
+    --ring: 72 100% 50%; /* #00FF00 */
+
+    /* Chart specific colors */
+    --chart-success: 72 100% 50%; /* #00FF00 */
+    --chart-info: 200 100% 50%; /* #00BFFF */
+    --chart-warning: 35 100% 50%; /* #FFAA00 */
+    --chart-danger: 0 100% 50%; /* #FF0000 */
+
+    /* Data visualization colors */
+    --chart-1: 72 100% 50%; /* #00FF00 */
+    --chart-2: 200 100% 50%; /* #00BFFF */
+    --chart-3: 35 100% 50%; /* #FFAA00 */
+    --chart-4: 280 100% 50%; /* #8000FF */
+    --chart-5: 320 100% 50%; /* #FF00FF */
+
+    /* Border radius */
+    --radius: 0.5rem;
   }
-  a:hover {
-    color: #747bff;
+
+  .dark {
+    --background: 240 14% 7%; /* #0D0D0D */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+    --card: 240 13% 11%; /* #1A1A1A */
+    --card-foreground: 0 0% 100%; /* #FFFFFF */
+    --popover: 240 13% 11%; /* #1A1A1A */
+    --popover-foreground: 0 0% 100%; /* #FFFFFF */
+    --primary: 72 100% 50%; /* #00FF00 */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+    --secondary: 240 8% 18%; /* #2E2E2E */
+    --secondary-foreground: 240 5% 67%; /* #A6A6A6 */
+    --muted: 240 8% 18%; /* #2E2E2E */
+    --muted-foreground: 240 5% 67%; /* #A6A6A6 */
+    --accent: 72 100% 50%; /* #00FF00 */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+    --destructive: 0 84% 60%; /* #FF3333 */
+    --destructive-foreground: 0 0% 98%; /* #FAFAFA */
+    --border: 240 8% 18%; /* #2E2E2E */
+    --input: 240 8% 18%; /* #2E2E2E */
+    --ring: 72 100% 50%; /* #00FF00 */
+    --chart-1: 72 100% 50%; /* #00FF00 */
+    --chart-2: 200 100% 50%; /* #00BFFF */
+    --chart-3: 35 100% 50%; /* #FFAA00 */
+    --chart-4: 280 100% 50%; /* #8000FF */
+    --chart-5: 320 100% 50%; /* #FF00FF */
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Typography scale */
+  h1 {
+    @apply text-2xl font-semibold;
+  }
+
+  h2 {
+    @apply text-xl font-semibold;
+  }
+
+  h3 {
+    @apply text-lg font-medium;
+  }
+
+  p {
+    @apply text-base;
+  }
+
+  small {
+    @apply text-sm;
+  }
+}
+
+@layer components {
+  .dashboard-card {
+    @apply bg-card rounded-lg border border-border p-4;
+  }
+
+  .stat-value {
+    @apply text-2xl font-semibold text-foreground;
+  }
+
+  .stat-label {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .chart-container {
+    @apply p-4 rounded-lg bg-card border border-border;
+  }
+
+  .accent-text {
+    @apply text-primary font-medium;
+  }
+
+  .button-primary {
+    @apply px-4 py-2 bg-secondary rounded-md hover:opacity-90 transition-opacity;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
+
+/* Utility classes for spacing */
+.spacing-xs {
+  margin: 4px;
+  padding: 4px;
+}
+
+.spacing-sm {
+  margin: 8px;
+  padding: 8px;
+}
+
+.spacing-md {
+  margin: 16px;
+  padding: 16px;
+}
+
+.spacing-lg {
+  margin: 24px;
+  padding: 24px;
+}
+
+.spacing-xl {
+  margin: 32px;
+  padding: 32px;
+}
+
+.spacing-2xl {
+  margin: 48px;
+  padding: 48px;
+}
+
+@layer utilities {
+  .hover-card {
+    @apply hover:bg-card/70 hover:text-foreground transition-all duration-200;
+  }
+  
+  .hover-primary {
+    @apply hover:bg-primary/20 hover:text-primary transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .sidebar-button {
+    @apply w-10 h-10 rounded-lg bg-card/40 border border-border/40 
+           hover:bg-card/60 transition-colors flex items-center justify-center;
+  }
+  
+  .sidebar-icon {
+    @apply text-muted-foreground hover:text-foreground transition-colors;
   }
 }
