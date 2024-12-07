@@ -1,50 +1,38 @@
-# React + TypeScript + Vite
+EV Dashboard 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Overview
 
-Currently, two official plugins are available:
+The EV Dashboard is a modern, scalable, and customizable web application built for data visualization and dynamic variable management. It provides insights into metrics like charging station performance, demand satisfaction, and infrastructure growth. The project leverages cutting-edge technologies such as React, TypeScript, Vite, and Tailwind CSS for a robust and efficient frontend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
+	•	Dynamic Charts and Visualizations:
+	•	Displays KPIs like Unsatisfied Demand %, Charging Growth, and Localization Change.
+	•	Provides interactive and responsive graphs.
+	•	Theme Management:
+	•	Supports light and dark themes with a customizable theme toggle component.
+	•	Dynamic Variable Management:
+	•	Allows users to manage variables with advanced search, grouping, and categorization.
+	•	Responsive Design:
+	•	Fully responsive layout ensuring compatibility with mobile, tablet, and desktop views.
+	•	Modern Architecture:
+	•	Built with modular, reusable components to facilitate easy scaling and maintenance.
 
-## Expanding the ESLint configuration
+  Tech Stack
+	•	Frontend Framework: React (with TypeScript)
+	•	Build Tool: Vite
+	•	Styling: Tailwind CSS
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Prerequisites
+	•	Node.js (>= 16.x)
+	•	npm or yarn
 
-- Configure the top-level `parserOptions` property like this:
+  Setup and Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+	1.	Clone the Repository: git clone https://github.com/your-username/ev-dashboard.git
+                            cd ev-dashboard
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2.	Install Dependencies: npm install
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+3.	Start the Development Server: npm run dev
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
