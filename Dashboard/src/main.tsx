@@ -9,11 +9,9 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider>
       <BrowserRouter>
-        <StrictMode>
-          <Routes>
-            <Route path="/" element={<App />} />
-          </Routes>
-        </StrictMode>
+        <Routes>
+          <Route path="/" element={<App />} />
+        </Routes>
       </BrowserRouter>
     </ThemeProvider>
   </StrictMode >,
